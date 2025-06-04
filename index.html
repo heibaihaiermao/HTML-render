@@ -1,0 +1,66 @@
+<!-- SEO Blog Generator - Main Interface (Figma structure exportable)
+     Frame size: 1920x1080, Auto Layout enabled, Interactive Prototype Ready -->
+
+<div style="font-family: 'Inter', sans-serif; width: 1920px; height: 1080px; display: flex;">
+  <!-- Sidebar -->
+  <div style="width: 250px; background-color: #1A202C; color: white; padding: 24px; display: flex; flex-direction: column; gap: 24px;">
+    <h2 style="margin: 0; font-size: 24px;">SEO Writer</h2>
+    <nav style="display: flex; flex-direction: column; gap: 16px;">
+      <a href="#" style="color: white; text-decoration: none;">Dashboard</a>
+      <a href="#" style="color: white; text-decoration: none;">My Content</a>
+      <a href="#" style="color: white; text-decoration: none;">Generate New</a>
+      <a href="#" style="color: white; text-decoration: none;">Rank Tracker</a>
+      <a href="#" style="color: white; text-decoration: none;">Settings</a>
+    </nav>
+  </div>
+
+  <!-- Main Area -->
+  <div style="flex-grow: 1; background-color: #F7FAFC; padding: 40px; display: flex; flex-direction: column; gap: 24px;">
+    <!-- Input Panel -->
+    <div style="background-color: white; padding: 24px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+      <h3 style="margin-top: 0;">Generate New Blog</h3>
+      <label>Keyword(s): <input type="text" style="margin-left: 8px; width: 300px;"></label><br><br>
+      <label>Niche:
+        <select style="margin-left: 8px;">
+          <option>Technology</option>
+          <option>Finance</option>
+          <option>Health</option>
+        </select>
+      </label><br><br>
+      <label><input type="checkbox"> Include Internal Links</label><br>
+      <label><input type="checkbox"> Auto Place Affiliate Links</label><br><br>
+      <button style="padding: 10px 20px; background-color: #3F8CFF; color: white; border: none; border-radius: 6px;">Generate Content</button>
+    </div>
+
+    <!-- Output Panel -->
+    <div style="background-color: white; padding: 24px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+      <h3>Generated Blog</h3>
+      <p><strong>Title:</strong> How AI is Changing SEO in 2025</p>
+      <p><strong>Outline:</strong></p>
+      <ul>
+        <li>Introduction to AI in Content</li>
+        <li>Why SEO Needs Smart Tools</li>
+        <li>On-Page Optimization via AI</li>
+        <li>Publishing and Tracking</li>
+      </ul>
+      <p><strong>Body:</strong> (editable area)</p>
+    </div>
+
+    <!-- SEO Tools Panel -->
+    <div style="display: flex; gap: 16px;">
+      <div style="flex: 1; background-color: white; padding: 16px; border-radius: 12px;">
+        <h4>SEO Summary</h4>
+        <p>Meta Title: ✅</p>
+        <p>Meta Description: ✅</p>
+        <p>H1 Present: ✅</p>
+        <p>Readability: B+</p>
+        <p>Keyword Density: 1.7%</p>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+        <button style="padding: 10px 20px; background-color: #48BB78; color: white; border: none; border-radius: 6px;">Publish to CMS</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Prototype Actions: You can wire "Generate Content" to scroll to Generated Blog -->
