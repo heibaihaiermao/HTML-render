@@ -3,95 +3,507 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>People - SEO Engine</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Automations - SEO Engine</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    /* Toggle switch styles */
+    .toggle-input:checked + .toggle-bg {
+      background-color: #3b82f6; /* blue-500 */
+    }
+    .toggle-input:checked + .toggle-bg .toggle-dot {
+      transform: translateX(1.5rem);
+    }
+  </style>
 </head>
 <body class="bg-gray-100 font-sans">
 
-<!-- Header -->
-<header class="bg-gray-900 text-white px-6 py-4 flex justify-between items-center">
-  <div class="text-xl font-bold">SEO Engine</div>
-  <div class="flex space-x-4 items-center">
-    <select class="bg-gray-800 text-white p-2 rounded" name="workspace">
-      <option>Pet Insurance</option>
-      <option>Book Publishing</option>
-      <option>Software Company</option>
-    </select>
-    <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">+ Create Workspace</button>
-    <button class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded">My Account</button>
-  </div>
-</header>
-
-<!-- Navigation Tabs -->
-<nav class="bg-white shadow p-4 flex space-x-6 text-gray-700">
-  <a href="#dashboard" class="hover:text-blue-500">Dashboard</a>
-  <a href="#calendar" class="hover:text-blue-500">Calendar</a>
-  <a href="#automations" class="hover:text-blue-500">Automations</a>
-  <a href="#branding" class="hover:text-blue-500">Branding</a>
-  <a href="#people" class="font-medium border-b-2 border-blue-500">People</a>
-</nav>
-
-<!-- People Page -->
-<section id="people" class="p-6">
-  <div class="bg-white p-6 rounded-lg shadow">
-    <h2 class="text-2xl font-semibold mb-4">Team Members & Permissions</h2>
-    <p class="text-gray-600 mb-4">
-      Invite virtual assistants, writers, or collaborators to your workspaces. Each user can be assigned a role: <strong>Owner</strong>, <strong>Editor</strong>, or <strong>Viewer</strong>.
-    </p>
-
-    <!-- Existing Members Table -->
-    <table class="w-full mb-6">
-      <thead class="bg-gray-200">
-        <tr>
-          <th class="p-2 text-left">Email</th>
-          <th class="p-2 text-left">Workspace</th>
-          <th class="p-2 text-left">Role</th>
-          <th class="p-2 text-left">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="border-t">
-          <td class="p-2">writer@example.com</td>
-          <td class="p-2">Pet Insurance</td>
-          <td class="p-2">Editor</td>
-          <td class="p-2">
-            <button class="text-blue-500 hover:underline mr-4">Change Role</button>
-            <button class="text-red-500 hover:underline">Remove</button>
-          </td>
-        </tr>
-        <tr class="border-t">
-          <td class="p-2">va@example.com</td>
-          <td class="p-2">Book Publishing</td>
-          <td class="p-2">Viewer</td>
-          <td class="p-2">
-            <button class="text-blue-500 hover:underline mr-4">Change Role</button>
-            <button class="text-red-500 hover:underline">Remove</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- Invite User Form -->
-    <div class="bg-gray-50 p-4 rounded shadow-inner">
-      <h3 class="text-lg font-medium mb-2">Invite New User</h3>
-      <form class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
-        <input type="email" class="p-2 border rounded w-full" placeholder="Invite user by email" required>
-        <select class="p-2 border rounded w-full">
-          <option>Pet Insurance</option>
-          <option>Book Publishing</option>
-          <option>Software Company</option>
-        </select>
-        <select class="p-2 border rounded w-full">
-          <option>Owner</option>
-          <option selected>Editor</option>
-          <option>Viewer</option>
-        </select>
-        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Send Invite</button>
-      </form>
-      <p class="text-sm text-gray-500 mt-2">Note: Invite system will expand in Phase 2 to support workspace-specific permissions and notifications.</p>
+  <!-- Header -->
+  <header class="bg-gray-900 text-white px-6 py-4 flex justify-between items-center">
+    <div class="text-xl font-bold">SEO Engine</div>
+    <div class="flex space-x-4 items-center">
+      <select class="bg-gray-800 text-white p-2 rounded" name="workspace" aria-label="Select workspace">
+        <option>Pet Insurance</option>
+        <option>Book Publishing</option>
+        <option>Software Company</option>
+      </select>
+      <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">+ Create Workspace</button>
+      <button class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded">My Account</button>
     </div>
-  </div>
-</section>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="bg-white shadow p-4 flex space-x-6 text-gray-700" role="navigation" aria-label="Main Navigation">
+    <a href="#dashboard" class="hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">Dashboard</a>
+    <a href="#calendar" class="hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">Calendar</a>
+    <a href="#automations" class="font-medium border-b-2 border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-current="page">Automations</a>
+    <a href="#branding" class="hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">Branding</a>
+    <a href="#people" class="hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500">People</a>
+  </nav>
+
+  <!-- Automations Page -->
+  <section id="automations" class="p-6 max-w-4xl mx-auto">
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold mb-4">Automations</h2>
+      <p class="text-gray-600 mb-6">After you save a blog, define what happens next automatically.</p>
+
+      <!-- Automation Options Form -->
+      <form class="space-y-8" aria-label="Automation settings form" novalidate>
+        
+        <!-- CMS Integrations -->
+        <div class="bg-gray-50 p-6 border rounded-lg">
+          <h3 class="text-lg font-semibold mb-4">CMS Integrations</h3>
+
+          <!-- WordPress -->
+          <div class="mb-6">
+            <label for="wordpress-toggle" class="flex items-center justify-between cursor-pointer select-none">
+              <span class="text-gray-800 font-medium">Auto-post to WordPress</span>
+              <input
+                type="checkbox"
+                id="wordpress-toggle"
+                class="toggle-input hidden"
+                aria-controls="wordpress-config"
+                aria-expanded="false"
+              />
+              <div class="toggle-bg w-12 h-6 bg-gray-300 rounded-full relative transition-colors duration-300">
+                <div class="toggle-dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full shadow transition-transform duration-300"></div>
+              </div>
+            </label>
+            <div
+              id="wordpress-config"
+              class="mt-4 ml-6 hidden"
+              aria-hidden="true"
+            >
+              <label for="wp-url" class="block mb-1 text-sm font-medium text-gray-700">Site URL</label>
+              <input
+                type="url"
+                id="wp-url"
+                name="wp-url"
+                placeholder="https://yourwordpresssite.com"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+
+              <label for="wp-username" class="block mt-4 mb-1 text-sm font-medium text-gray-700">Username</label>
+              <input
+                type="text"
+                id="wp-username"
+                name="wp-username"
+                placeholder="WordPress username"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+
+              <label for="wp-api-key" class="block mt-4 mb-1 text-sm font-medium text-gray-700">API Key / Password</label>
+              <input
+                type="password"
+                id="wp-api-key"
+                name="wp-api-key"
+                placeholder="********"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+          </div>
+
+          <!-- Netlify -->
+          <div class="mb-6">
+            <label for="netlify-toggle" class="flex items-center justify-between cursor-pointer select-none">
+              <span class="text-gray-800 font-medium">Auto-post to Netlify</span>
+              <input
+                type="checkbox"
+                id="netlify-toggle"
+                class="toggle-input hidden"
+                aria-controls="netlify-config"
+                aria-expanded="false"
+              />
+              <div class="toggle-bg w-12 h-6 bg-gray-300 rounded-full relative transition-colors duration-300">
+                <div class="toggle-dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full shadow transition-transform duration-300"></div>
+              </div>
+            </label>
+            <div
+              id="netlify-config"
+              class="mt-4 ml-6 hidden"
+              aria-hidden="true"
+            >
+              <label for="netlify-site-id" class="block mb-1 text-sm font-medium text-gray-700">Site ID</label>
+              <input
+                type="text"
+                id="netlify-site-id"
+                name="netlify-site-id"
+                placeholder="Your Netlify Site ID"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+
+              <label for="netlify-access-token" class="block mt-4 mb-1 text-sm font-medium text-gray-700">Access Token</label>
+              <input
+                type="password"
+                id="netlify-access-token"
+                name="netlify-access-token"
+                placeholder="********"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+          </div>
+
+          <!-- Wix -->
+          <div class="mb-6">
+            <label for="wix-toggle" class="flex items-center justify-between cursor-pointer select-none">
+              <span class="text-gray-800 font-medium">Auto-post to Wix</span>
+              <input
+                type="checkbox"
+                id="wix-toggle"
+                class="toggle-input hidden"
+                aria-controls="wix-config"
+                aria-expanded="false"
+              />
+              <div class="toggle-bg w-12 h-6 bg-gray-300 rounded-full relative transition-colors duration-300">
+                <div class="toggle-dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full shadow transition-transform duration-300"></div>
+              </div>
+            </label>
+            <div
+              id="wix-config"
+              class="mt-4 ml-6 hidden"
+              aria-hidden="true"
+            >
+              <label for="wix-site-url" class="block mb-1 text-sm font-medium text-gray-700">Site URL</label>
+              <input
+                type="url"
+                id="wix-site-url"
+                name="wix-site-url"
+                placeholder="https://yourwixsite.com"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+
+              <label for="wix-api-key" class="block mt-4 mb-1 text-sm font-medium text-gray-700">API Key</label>
+              <input
+                type="password"
+                id="wix-api-key"
+                name="wix-api-key"
+                placeholder="********"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+          </div>
+
+          <!-- Webflow -->
+          <div>
+            <label for="webflow-toggle" class="flex items-center justify-between cursor-pointer select-none">
+              <span class="text-gray-800 font-medium">Auto-post to Webflow</span>
+              <input
+                type="checkbox"
+                id="webflow-toggle"
+                class="toggle-input hidden"
+                aria-controls="webflow-config"
+                aria-expanded="false"
+              />
+              <div class="toggle-bg w-12 h-6 bg-gray-300 rounded-full relative transition-colors duration-300">
+                <div class="toggle-dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full shadow transition-transform duration-300"></div>
+              </div>
+            </label>
+            <div
+              id="webflow-config"
+              class="mt-4 ml-6 hidden"
+              aria-hidden="true"
+            >
+              <label for="webflow-site-id" class="block mb-1 text-sm font-medium text-gray-700">Site ID</label>
+              <input
+                type="text"
+                id="webflow-site-id"
+                name="webflow-site-id"
+                placeholder="Your Webflow Site ID"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+
+              <label for="webflow-api-key" class="block mt-4 mb-1 text-sm font-medium text-gray-700">API Key</label>
+              <input
+                type="password"
+                id="webflow-api-key"
+                name="webflow-api-key"
+                placeholder="********"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Media Sharing -->
+        <div class="bg-gray-50 p-6 border rounded-lg">
+          <h3 class="text-lg font-semibold mb-4">Social Media Sharing</h3>
+
+          <!-- Facebook -->
+          <div class="mb-6">
+            <label for="facebook-toggle" class="flex items-center justify-between cursor-pointer select-none">
+              <span class="text-gray-800 font-medium">Auto-share to Facebook</span>
+              <input
+                type="checkbox"
+                id="facebook-toggle"
+                class="toggle-input hidden"
+                aria-controls="facebook-config"
+                aria-expanded="false"
+              />
+              <div class="toggle-bg w-12 h-6 bg-gray-300 rounded-full relative transition-colors duration-300">
+                <div class="toggle-dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full shadow transition-transform duration-300"></div>
+              </div>
+            </label>
+            <div
+              id="facebook-config"
+              class="mt-4 ml-6 hidden"
+              aria-hidden="true"
+            >
+              <label for="fb-page" class="block mb-1 text-sm font-medium text-gray-700">Facebook Page ID</label>
+              <input
+                type="text"
+                id="fb-page"
+                name="fb-page"
+                placeholder="Your Facebook Page ID"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+
+              <label for="fb-access-token" class="block mt-4 mb-1 text-sm font-medium text-gray-700">Access Token</label>
+              <input
+                type="password"
+                id="fb-access-token"
+                name="fb-access-token"
+                placeholder="********"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+          </div>
+
+          <!-- Instagram -->
+          <div class="mb-6">
+            <label for="instagram-toggle" class="flex items-center justify-between cursor-pointer select-none">
+              <span class="text-gray-800 font-medium">Auto-share to Instagram</span>
+              <input
+                type="checkbox"
+                id="instagram-toggle"
+                class="toggle-input hidden"
+                aria-controls="instagram-config"
+                aria-expanded="false"
+              />
+              <div class="toggle-bg w-12 h-6 bg-gray-300 rounded-full relative transition-colors duration-300">
+                <div class="toggle-dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full shadow transition-transform duration-300"></div>
+              </div>
+            </label>
+            <div
+              id="instagram-config"
+              class="mt-4 ml-6 hidden"
+              aria-hidden="true"
+            >
+              <label for="insta-account" class="block mb-1 text-sm font-medium text-gray-700">Instagram Account Name</label>
+              <input
+                type="text"
+                id="insta-account"
+                name="insta-account"
+                placeholder="Your Instagram username"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+
+              <label for="insta-access-token" class="block mt-4 mb-1 text-sm font-medium text-gray-700">Access Token</label>
+              <input
+                type="password"
+                id="insta-access-token"
+                name="insta-access-token"
+                placeholder="********"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+          </div>
+
+          <!-- Pinterest -->
+          <div>
+            <label for="pinterest-toggle" class="flex items-center justify-between cursor-pointer select-none">
+              <span class="text-gray-800 font-medium">Auto-share to Pinterest</span>
+              <input
+                type="checkbox"
+                id="pinterest-toggle"
+                class="toggle-input hidden"
+                aria-controls="pinterest-config"
+                aria-expanded="false"
+              />
+              <div class="toggle-bg w-12 h-6 bg-gray-300 rounded-full relative transition-colors duration-300">
+                <div class="toggle-dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full shadow transition-transform duration-300"></div>
+              </div>
+            </label>
+            <div
+              id="pinterest-config"
+              class="mt-4 ml-6 hidden"
+              aria-hidden="true"
+            >
+              <label for="pinterest-board" class="block mb-1 text-sm font-medium text-gray-700">Pinterest Board</label>
+              <input
+                type="text"
+                id="pinterest-board"
+                name="pinterest-board"
+                placeholder="Your Pinterest board name"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+
+              <label for="pinterest-access-token" class="block mt-4 mb-1 text-sm font-medium text-gray-700">Access Token</label>
+              <input
+                type="password"
+                id="pinterest-access-token"
+                name="pinterest-access-token"
+                placeholder="********"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Newsletter Platforms -->
+        <div class="bg-gray-50 p-6 border rounded-lg">
+          <h3 class="text-lg font-semibold mb-4">Newsletter Platforms</h3>
+
+          <!-- Substack -->
+          <div class="mb-6">
+            <label for="substack-toggle" class="flex items-center justify-between cursor-pointer select-none">
+              <span class="text-gray-800 font-medium">Auto-send to Substack</span>
+              <input
+                type="checkbox"
+                id="substack-toggle"
+                class="toggle-input hidden"
+                aria-controls="substack-config"
+                aria-expanded="false"
+              />
+              <div class="toggle-bg w-12 h-6 bg-gray-300 rounded-full relative transition-colors duration-300">
+                <div class="toggle-dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full shadow transition-transform duration-300"></div>
+              </div>
+            </label>
+            <div
+              id="substack-config"
+              class="mt-4 ml-6 hidden"
+              aria-hidden="true"
+            >
+              <label for="substack-url" class="block mb-1 text-sm font-medium text-gray-700">Substack URL</label>
+              <input
+                type="url"
+                id="substack-url"
+                name="substack-url"
+                placeholder="https://yourblog.substack.com"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+
+              <label for="substack-api-key" class="block mt-4 mb-1 text-sm font-medium text-gray-700">API Key</label>
+              <input
+                type="password"
+                id="substack-api-key"
+                name="substack-api-key"
+                placeholder="********"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+          </div>
+
+          <!-- Medium -->
+          <div class="mb-6">
+            <label for="medium-toggle" class="flex items-center justify-between cursor-pointer select-none">
+              <span class="text-gray-800 font-medium">Auto-send to Medium</span>
+              <input
+                type="checkbox"
+                id="medium-toggle"
+                class="toggle-input hidden"
+                aria-controls="medium-config"
+                aria-expanded="false"
+              />
+              <div class="toggle-bg w-12 h-6 bg-gray-300 rounded-full relative transition-colors duration-300">
+                <div class="toggle-dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full shadow transition-transform duration-300"></div>
+              </div>
+            </label>
+            <div
+              id="medium-config"
+              class="mt-4 ml-6 hidden"
+              aria-hidden="true"
+            >
+              <label for="medium-user-id" class="block mb-1 text-sm font-medium text-gray-700">Medium User ID</label>
+              <input
+                type="text"
+                id="medium-user-id"
+                name="medium-user-id"
+                placeholder="Your Medium User ID"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+
+              <label for="medium-integration-token" class="block mt-4 mb-1 text-sm font-medium text-gray-700">Integration Token</label>
+              <input
+                type="password"
+                id="medium-integration-token"
+                name="medium-integration-token"
+                placeholder="********"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+          </div>
+
+          <!-- Revue -->
+          <div>
+            <label for="revue-toggle" class="flex items-center justify-between cursor-pointer select-none">
+              <span class="text-gray-800 font-medium">Auto-send to Revue</span>
+              <input
+                type="checkbox"
+                id="revue-toggle"
+                class="toggle-input hidden"
+                aria-controls="revue-config"
+                aria-expanded="false"
+              />
+              <div class="toggle-bg w-12 h-6 bg-gray-300 rounded-full relative transition-colors duration-300">
+                <div class="toggle-dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full shadow transition-transform duration-300"></div>
+              </div>
+            </label>
+            <div
+              id="revue-config"
+              class="mt-4 ml-6 hidden"
+              aria-hidden="true"
+            >
+              <label for="revue-api-key" class="block mb-1 text-sm font-medium text-gray-700">API Key</label>
+              <input
+                type="password"
+                id="revue-api-key"
+                name="revue-api-key"
+                placeholder="********"
+                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex justify-end space-x-4">
+          <button
+            type="reset"
+            class="px-6 py-2 rounded border border-gray-400 text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            class="px-6 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          >
+            Save
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <script>
+    // Script to handle toggle show/hide config panels and update aria attributes
+    document.querySelectorAll('.toggle-input').forEach(toggle => {
+      toggle.addEventListener('change', (e) => {
+        const isChecked = e.target.checked;
+        const configId = e.target.getAttribute('aria-controls');
+        const configPanel = document.getElementById(configId);
+        if (configPanel) {
+          if (isChecked) {
+            configPanel.classList.remove('hidden');
+            configPanel.setAttribute('aria-hidden', 'false');
+          } else {
+            configPanel.classList.add('hidden');
+            configPanel.setAttribute('aria-hidden', 'true');
+          }
+          e.target.setAttribute('aria-expanded', isChecked.toString());
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
