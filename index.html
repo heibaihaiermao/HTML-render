@@ -1,116 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SEO Blog Generator</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f8f9fa;
-      color: #1a202c;
-    }
-    .hero {
-      padding: 100px 40px;
-      background-color: #ffffff;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 30px;
-    }
-    .hero button {
-      padding: 14px 28px;
-      font-size: 16px;
-      background-color: #3F8CFF;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      padding: 80px 40px;
-      background-color: #edf2f7;
-      justify-content: center;
-    }
-    .feature-card {
-      background-color: white;
-      border-radius: 12px;
-      padding: 24px;
-      width: 300px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .feature-card h3 {
-      margin-bottom: 12px;
-    }
-    .screenshot {
-      padding: 60px 40px;
-      text-align: center;
-    }
-    .screenshot img {
-      max-width: 90%;
-      border-radius: 8px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-    }
-    .footer {
-      padding: 40px;
-      background-color: #1A202C;
-      color: white;
-      text-align: center;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEO Content Platform</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <section class="hero">
-    <h1>Rank Higher with AI-Powered Blog Content</h1>
-    <p>Create SEO-optimized blogs with one click. Keyword input, content generation, CMS publishing, and rank tracking—all in one tool.</p>
-    <button onclick="window.location.href='#get-started'">Get Started</button>
+<body class="bg-gray-100 font-sans">
+
+<!-- Header -->
+<header class="bg-gray-900 text-white px-6 py-4 flex justify-between items-center">
+  <div class="text-xl font-bold">SEO Engine</div>
+  <div class="flex space-x-4 items-center">
+    <select class="bg-gray-800 text-white p-2 rounded" name="workspace">
+      <option>Pet Insurance</option>
+      <option>Book Publishing</option>
+      <option>Software Company</option>
+    </select>
+    <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">My Account</button>
+  </div>
+</header>
+
+<!-- Navigation Tabs -->
+<nav class="bg-white shadow p-4 flex space-x-6 text-gray-700">
+  <a href="#" class="font-medium border-b-2 border-blue-500">Dashboard</a>
+  <a href="#" class="hover:text-blue-500">Calendar</a>
+  <a href="#" class="hover:text-blue-500">Automations</a>
+  <a href="#" class="hover:text-blue-500">Branding</a>
+  <a href="#" class="hover:text-blue-500">Team</a>
+</nav>
+
+<!-- Dashboard Content -->
+<main class="p-6">
+  <section class="bg-white p-6 rounded-lg shadow">
+    <h2 class="text-2xl font-semibold mb-4">Welcome Back!</h2>
+    <div class="flex space-x-4">
+      <input type="text" class="flex-1 p-2 border border-gray-300 rounded" placeholder="Enter your topic or keyword..." />
+      <button class="bg-blue-500 text-white px-4 py-2 rounded">Start SEO Research</button>
+    </div>
+
+    <div class="mt-4">
+      <h3 class="font-semibold">Suggested Keywords:</h3>
+      <div class="flex flex-wrap gap-2 mt-2">
+        <span class="bg-gray-200 px-3 py-1 rounded-full">Keyword 1</span>
+        <span class="bg-gray-200 px-3 py-1 rounded-full">Keyword 2</span>
+        <span class="bg-gray-200 px-3 py-1 rounded-full">Keyword 3</span>
+        <span class="bg-gray-200 px-3 py-1 rounded-full">Keyword 4</span>
+        <span class="bg-gray-200 px-3 py-1 rounded-full">Keyword 5</span>
+      </div>
+      <button class="mt-4 bg-green-500 text-white px-4 py-2 rounded">Generate New Blog</button>
+    </div>
   </section>
 
-  <section class="features">
-    <div class="feature-card">
-      <h3>Keyword + Niche Input</h3>
-      <p>Target your audience precisely with smart keyword suggestions.</p>
-    </div>
-    <div class="feature-card">
-      <h3>AI Blog Generation</h3>
-      <p>Automatic title, outline, and body creation tailored for SEO.</p>
-    </div>
-    <div class="feature-card">
-      <h3>SEO Optimization</h3>
-      <p>H1, meta tags, schema markup, and keyword density monitoring.</p>
-    </div>
-    <div class="feature-card">
-      <h3>CMS Publishing</h3>
-      <p>Publish directly to WordPress or Webflow with one click.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Rank Tracking</h3>
-      <p>Monitor Google rankings and performance metrics over time.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Affiliate Link Integration</h3>
-      <p>Monetize automatically by inserting relevant affiliate links.</p>
-    </div>
+  <!-- Blog Table -->
+  <section class="mt-6">
+    <h3 class="text-xl font-semibold mb-2">My Content</h3>
+    <input type="text" class="w-full mb-2 p-2 border border-gray-300 rounded" placeholder="Search in saved blogs..." />
+    <table class="w-full bg-white rounded shadow overflow-hidden">
+      <thead class="bg-gray-200 text-left">
+        <tr>
+          <th class="p-2">Blog</th>
+          <th class="p-2">SEO Score</th>
+          <th class="p-2">Date Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-t">
+          <td class="p-2">Example Blog 1</td>
+          <td class="p-2">94</td>
+          <td class="p-2">06/01/2025</td>
+        </tr>
+        <tr class="border-t">
+          <td class="p-2">Example Blog 2</td>
+          <td class="p-2">88</td>
+          <td class="p-2">06/02/2025</td>
+        </tr>
+        <tr class="border-t">
+          <td class="p-2">Example Blog 3</td>
+          <td class="p-2">91</td>
+          <td class="p-2">06/03/2025</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
+</main>
 
-  <section class="screenshot" id="get-started">
-    <h2>Live Preview</h2>
-    <img src="b01c28ad-e333-4537-b194-c2459484b232.png" alt="App Interface Screenshot">
-  </section>
-
-  <footer class="footer">
-    <p>&copy; 2025 SEO Blog Generator. All rights reserved.</p>
-  </footer>
 </body>
 </html>
