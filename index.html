@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SEO Content Platform</title>
+  <title>People - SEO Engine</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 font-sans">
@@ -24,123 +24,72 @@
 
 <!-- Navigation Tabs -->
 <nav class="bg-white shadow p-4 flex space-x-6 text-gray-700">
-  <a href="#dashboard" class="font-medium border-b-2 border-blue-500">Dashboard</a>
+  <a href="#dashboard" class="hover:text-blue-500">Dashboard</a>
   <a href="#calendar" class="hover:text-blue-500">Calendar</a>
   <a href="#automations" class="hover:text-blue-500">Automations</a>
   <a href="#branding" class="hover:text-blue-500">Branding</a>
-  <a href="#people" class="hover:text-blue-500">People</a>
+  <a href="#people" class="font-medium border-b-2 border-blue-500">People</a>
 </nav>
 
-<!-- Dashboard Page -->
-<section id="dashboard" class="p-6">
+<!-- People Page -->
+<section id="people" class="p-6">
   <div class="bg-white p-6 rounded-lg shadow">
-    <h2 class="text-2xl font-semibold mb-4">Welcome Back!</h2>
-    <div class="flex space-x-4">
-      <input type="text" class="flex-1 p-2 border border-gray-300 rounded" placeholder="Enter your topic or keyword..." />
-      <button class="bg-blue-500 text-white px-4 py-2 rounded">Start SEO Research</button>
-    </div>
+    <h2 class="text-2xl font-semibold mb-4">Team Members & Permissions</h2>
+    <p class="text-gray-600 mb-4">
+      Invite virtual assistants, writers, or collaborators to your workspaces. Each user can be assigned a role: <strong>Owner</strong>, <strong>Editor</strong>, or <strong>Viewer</strong>.
+    </p>
 
-    <div class="mt-4">
-      <h3 class="font-semibold">Suggested Keywords:</h3>
-      <div class="flex flex-wrap gap-2 mt-2">
-        <span class="bg-gray-200 px-3 py-1 rounded-full">Keyword 1</span>
-        <span class="bg-gray-200 px-3 py-1 rounded-full">Keyword 2</span>
-        <span class="bg-gray-200 px-3 py-1 rounded-full">Keyword 3</span>
-        <span class="bg-gray-200 px-3 py-1 rounded-full">Keyword 4</span>
-        <span class="bg-gray-200 px-3 py-1 rounded-full">Keyword 5</span>
-      </div>
-      <button class="mt-4 bg-green-500 text-white px-4 py-2 rounded">Generate New Blog</button>
-    </div>
-  </div>
-
-  <section class="mt-6">
-    <h3 class="text-xl font-semibold mb-2">My Content</h3>
-    <input type="text" class="w-full mb-2 p-2 border border-gray-300 rounded" placeholder="Search in saved blogs..." />
-    <table class="w-full bg-white rounded shadow overflow-hidden">
-      <thead class="bg-gray-200 text-left">
-        <tr>
-          <th class="p-2">Blog</th>
-          <th class="p-2">SEO Score</th>
-          <th class="p-2">Date Created</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="border-t">
-          <td class="p-2">Example Blog 1</td>
-          <td class="p-2">94</td>
-          <td class="p-2">06/01/2025</td>
-        </tr>
-        <tr class="border-t">
-          <td class="p-2">Example Blog 2</td>
-          <td class="p-2">88</td>
-          <td class="p-2">06/02/2025</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-</section>
-
-<!-- Calendar Page -->
-<section id="calendar" class="p-6 hidden">
-  <div class="bg-white p-6 rounded-lg shadow">
-    <h2 class="text-2xl font-semibold mb-4">Content Calendar</h2>
-    <p class="text-gray-500">[Weekly or Monthly View of scheduled blogs/posts]</p>
-  </div>
-</section>
-
-<!-- Automations Page -->
-<section id="automations" class="p-6 hidden">
-  <div class="bg-white p-6 rounded-lg shadow">
-    <h2 class="text-2xl font-semibold mb-4">Automations</h2>
-    <form class="space-y-2">
-      <label class="block"><input type="checkbox" class="mr-2"> Auto-post to WordPress</label>
-      <label class="block"><input type="checkbox" class="mr-2"> Share to Facebook</label>
-      <label class="block"><input type="checkbox" class="mr-2"> Send to Substack</label>
-    </form>
-  </div>
-</section>
-
-<!-- Branding Settings Page -->
-<section id="branding" class="p-6 hidden">
-  <div class="bg-white p-6 rounded-lg shadow">
-    <h2 class="text-2xl font-semibold mb-4">Workspace Branding</h2>
-    <form class="space-y-4">
-      <label class="block">Upload Logo: <input type="file" class="mt-1"></label>
-      <label class="block">Upload Favicon: <input type="file" class="mt-1"></label>
-      <label class="block">Select Color Scheme: <input type="color" class="ml-2"></label>
-    </form>
-  </div>
-</section>
-
-<!-- People / Team Members Page -->
-<section id="people" class="p-6 hidden">
-  <div class="bg-white p-6 rounded-lg shadow">
-    <h2 class="text-2xl font-semibold mb-4">Team Members</h2>
-    <table class="w-full mb-4">
+    <!-- Existing Members Table -->
+    <table class="w-full mb-6">
       <thead class="bg-gray-200">
         <tr>
           <th class="p-2 text-left">Email</th>
+          <th class="p-2 text-left">Workspace</th>
           <th class="p-2 text-left">Role</th>
           <th class="p-2 text-left">Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr class="border-t">
-          <td class="p-2">user@example.com</td>
+          <td class="p-2">writer@example.com</td>
+          <td class="p-2">Pet Insurance</td>
           <td class="p-2">Editor</td>
-          <td class="p-2"><button class="text-red-500">Remove</button></td>
+          <td class="p-2">
+            <button class="text-blue-500 hover:underline mr-4">Change Role</button>
+            <button class="text-red-500 hover:underline">Remove</button>
+          </td>
+        </tr>
+        <tr class="border-t">
+          <td class="p-2">va@example.com</td>
+          <td class="p-2">Book Publishing</td>
+          <td class="p-2">Viewer</td>
+          <td class="p-2">
+            <button class="text-blue-500 hover:underline mr-4">Change Role</button>
+            <button class="text-red-500 hover:underline">Remove</button>
+          </td>
         </tr>
       </tbody>
     </table>
-    <form class="flex space-x-4">
-      <input type="email" class="p-2 border rounded w-full" placeholder="Invite user by email">
-      <select class="p-2 border rounded">
-        <option>Owner</option>
-        <option>Editor</option>
-        <option>Viewer</option>
-      </select>
-      <button class="bg-blue-500 text-white px-4 py-2 rounded">Send Invite</button>
-    </form>
+
+    <!-- Invite User Form -->
+    <div class="bg-gray-50 p-4 rounded shadow-inner">
+      <h3 class="text-lg font-medium mb-2">Invite New User</h3>
+      <form class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+        <input type="email" class="p-2 border rounded w-full" placeholder="Invite user by email" required>
+        <select class="p-2 border rounded w-full">
+          <option>Pet Insurance</option>
+          <option>Book Publishing</option>
+          <option>Software Company</option>
+        </select>
+        <select class="p-2 border rounded w-full">
+          <option>Owner</option>
+          <option selected>Editor</option>
+          <option>Viewer</option>
+        </select>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Send Invite</button>
+      </form>
+      <p class="text-sm text-gray-500 mt-2">Note: Invite system will expand in Phase 2 to support workspace-specific permissions and notifications.</p>
+    </div>
   </div>
 </section>
 
